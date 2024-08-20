@@ -1,0 +1,446 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    
+}
+.main-body ~ img{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+.main-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: black;*/
+    height: 100vh;
+    position: relative;
+
+}
+.container{
+    /*height: 2rem;*/
+    /*width: 2rem;*/
+    height: 0;
+    width: 0;
+    position: fixed;
+    border-radius: 0.5em;
+     /*display: none;*/
+    z-index: -1;
+    overflow: hidden;
+    font-family: Roboto, sans-serif;
+    bottom: 20px;
+    right: 50px;
+    transition: 0.5s,height,width, 0.5s;
+    transition-delay: 0s,0.5s,0.5s;
+    transition-timing-function: cubic-bezier(0.0750,.82,.165,1);
+}
+.active{
+    height: 37.5rem;
+    width: 25rem;
+    /*display: block;*/
+    transition-delay: .1s,0.5s,0.5s;
+    z-index: 2;
+
+}
+.typing-indicator{
+    background-color: #e6e7ed;
+    will-change: transform;
+    width: 3.6em;
+    height: 1em;
+    border-radius: 50%;
+    padding: 0.5em;
+    display: table;
+    margin: 0 auto;
+    left: 4em;
+    position: absolute;
+    animation: 2s bludge infinite ease-out;
+}
+.typing-indicator::before,
+.typing-indicator::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    height: 20px;
+    width: 20px;
+    border-radius:50% ;
+    background-color: #e6e7ed;
+}
+.typing-indicator::after{
+    height: 10px;
+    width: 10px;
+    left: -10px;
+    bottom: -10px;
+}
+.typing-indicator span{
+    height: 13px;
+    width: 13px;
+    float: left;
+    margin: 3px 4px 0 4px;
+    background-color: #9e9ca1;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.4;
+}
+/* Animations */
+.typing-indicator span:nth-child(1) {
+    animation: 1s blink infinite 0.333s;
+}
+.typing-indicator span:nth-child(2){
+    animation: 1s blink infinite 0.333s;
+}
+.typing-indicator span:nth-child(3){
+    animation: 1s blink infinite 0.333s;
+}
+@keyframes blink{
+    50% {
+        opacity: 1;
+    }
+}
+@keyframes bulge {
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.top-part{
+    height: 15%;
+    border: 2px solid black;
+    background-color: black;
+    margin: 2px;
+    border-radius: 0.3rem;
+    justify-content: center;
+    position: relative;
+    align-content: center;
+    z-index: -1;
+}
+.agent-text {
+
+    color:white;
+}
+.profile-picture-top , .cross{
+    width:2.5rem;
+    height: 2.5rem;
+}
+.profile-picture-top{
+    margin-right:1.4em;
+    border-radius: 50%;
+    z-index: 1;
+}
+.agent-details i{
+    background: white;
+    width: 5em;
+    height: 5em;
+    position: absolute;
+    left: -0.5em;
+    z-index: 0;
+    border-radius: 50%;
+}
+.cross{
+    right: 2em;
+    position: absolute;
+    top:1.5em;
+
+}
+
+.agent-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6em;
+    position: absolute;
+    left:6em;
+    top:0.6em;
+
+}
+.message-part{
+    overflow:scroll;
+    padding: 0.5em;
+    max-height: 25.7em;
+    min-height: 25.7em;
+    overflow-x: hidden; /* Hides horizontal scrollbar */
+    overflow-y: auto;  /* Allows vertical scrollbar when needed */
+    position: relative;
+
+}
+.bot img {
+    width: 3em;
+    height:3em;
+    border-radius: 30px;
+}
+.message{
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    margin: 1px ;
+    position: relative;
+
+}
+.message .outImage{
+    width: 15em;
+    height: 15em;
+    object-fit: contain;
+    border-radius: unset;
+
+}
+.bot >span{
+    position: absolute;
+    left: 6em;
+    bottom: -0.5em;
+    font-size: 0.7em;
+}
+.user span{
+    position: absolute;
+    right :1em;
+    bottom: -0.5em;
+    font-size: 0.7em;
+    color: black;
+}
+.bot p {
+    background-color: rgba(128, 128, 128, 0.402);
+    color: black;
+    margin-left:5px;
+    border-radius: 1em 1em 1em 0;
+
+}
+.user p{
+    background-color: black;
+    color: white;
+    border-radius: 1em 1em 0 1em;
+
+}
+.bot p , .user p {
+    height: auto;
+    padding: 0.8em;
+    min-height: 0.3rem;
+    min-width: 0.3rem;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+ 
+
+}
+.user  {
+    color: white;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.sending-part{
+   /* Fixes the element to the viewport */
+       /* Aligns to the bottom of the viewport */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 20px 20px;
+    border-top:1px solid gray;
+    height: 6%;
+    position: absolute;
+    bottom:6%;
+}
+.sending-part div {
+
+    position: relative;
+}
+.sending-part img{
+    position: absolute;
+    object-fit: contain;
+    width: 75%;
+    height: 75%;
+    left:5px;
+    align-self: center;
+}
+.sending-part .camera{
+    flex: 1;
+    align-items: center;
+    display: flex;
+    align-content: center;
+}
+.sending-part .text-area{
+    flex:4;
+    height: 100%;
+}
+.sending-part .sending{
+    flex: 1;
+    display: flex;
+    align-content: center;
+}
+
+
+.sending-part .sending:hover,.sending-part .sending:active {
+    cursor: pointer;
+}
+.sending-part .sending:hover img{
+    background-color: #c4c4c4;
+    border-radius: 1em;
+}
+.sending-part .sending:active img{
+    background-color: #888484;
+    border-radius: 1em;
+}
+.cross:hover,  .cross:active{
+    cursor: pointer;
+}
+.cross:hover {
+    background-color: #393838;
+    border-radius: 1em;
+}
+.cross:active {
+    background-color: #888484;
+    border-radius: 1em;
+}
+.sending-part textarea{
+    display: flex;
+    align-items: center;
+    width: 87%;
+    height:30%;
+    padding: 1em 1em 1em 2em;
+    font-size: 1.1em;
+    border: none;
+    resize: none;
+
+}
+textarea:focus {
+    border: none;  /* Remove the border when the textarea is focused */
+    outline: none;  /* Optional: Remove the default focus outline */
+}
+
+.menuToggle{
+    position: fixed;
+    bottom: 1em;
+    right: 2em;
+    height:8em;
+    width: 8em;
+    z-index: 0;
+}
+.menuToggle img {
+
+    background: #fff;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    box-shadow: 0 0 10px black;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.last-thing{
+    position: absolute;
+    bottom: 0;
+    height: 5%;
+    width: 100%;
+    display: flex;
+
+}
+.last-thing .rating, .last-thing, .download{
+    flex: 1.5;
+    cursor: pointer;
+
+}
+.last-thing .rating img , .last-thing .download img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.last-thing .power{
+    flex: 8;
+    font-size: 0.8em;
+    color:#9B9B9B ;
+    margin-right: 2em;
+}
+.last-thing .power p {
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+}
+.message .error {
+    color : #721c23;
+    background-color: #f8d7da;
+}
+.bx-star{
+    color: black;
+    font-size: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+
+
+}
+.rating-box{
+    padding: 0.8em;
+    position: absolute;
+    display: none;
+    background-color: white;
+    width: 94%;
+    z-index: 3;
+    top:16%;
+    left: 0;
+    border-radius: 0 0 1em 1em;
+}
+.rating-box button{
+    display: block;
+}
+.rating-box p {
+    font-size: 0.8em;
+    font-weight: bold;
+    font-style: italic;
+}
+.rating-box textarea{
+    margin-top: 1em;
+    width: 89%;
+    font-size: 0.9em;
+    height: 5em;
+    resize: none;
+    padding: 0.9em;
+}
+.rating-box textarea:focus{
+    border: 1px solid rgba(81, 105, 153, 0.68);
+}
+.rating-box button{
+    margin-top: 1em;
+    width: 90%;
+    height: 2em;
+    border-radius: 0.4em;
+    background-color: #516999;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+.rating-box button:hover{
+    background-color: rgba(81, 105, 153, 0.85);
+}
+.rating-box button:active{
+    background-color: rgba(81, 105, 153, 0.95);
+}
+.rate-behind{
+    display: none;
+    height: 85%;
+    width: 100%;
+    position: absolute;
+    top: 16%;
+    left: 0;
+    background-color: rgba(162,162,162,0.62);
+
+
+}
+.rating-box .minimize{
+    font-size: 1.5em;
+    color: black;
+    position: absolute;
+    cursor: pointer;
+    right: 1em;
+    top: 0.3em;
+    height: 0.5em;
+}
+ /* When hovering over a star, highlight it and all preceding stars */
+.goldStar {
+    color:gold;
+
+}
+.goldStarActive {
+    color:gold;
+
+}
+.message p a{
+    color: blue;
+}

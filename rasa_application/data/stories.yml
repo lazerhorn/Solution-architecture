@@ -1,0 +1,123 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: questioning path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_news_link
+  - action: providing_news_link
+
+- story: Haze effects inquiry
+  steps:
+  - intent: ask_haze_effects
+  - action: utter_haze_effects
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thank_you
+  - action: utter_ask_more_questions
+
+- story: Provide unit phone number
+  steps:
+  - intent: ask_unit_phone_number
+  - action: action_provide_unit_phone_number
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thank_you
+  - action: utter_ask_more_questions
+
+- story: Feedback/suggestions inquiry
+  steps:
+  - intent: ask_feedback_suggestions
+  - action: utter_feedback_suggestions
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thank_you
+  - action: utter_ask_more_questions
+
+- story: Medical claims inquiry
+  steps:
+  - intent: ask_medical_claims
+  - action: utter_medical_claims
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thank_you
+  - action: utter_ask_more_questions
+
+- story: Aircraft noise inquiry
+  steps:
+  - intent: ask_aircraft_noise
+  - action: utter_aircraft_noise
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thank_you
+  - action: utter_ask_more_questions
+
+- story: Firearms and ammunition control inquiry
+  steps:
+  - intent: ask_firearms_ammunition_control
+  - action: utter_firearms_ammunition_control
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thank_you
+  - action: utter_ask_more_questions
+
+- story: NS home awards inquiry
+  steps:
+  - intent: ask_ns_home_awards
+  - action: utter_ns_home_awards
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thank_you
+  - action: utter_ask_more_questions
+
+- story: Green zones inquiry
+  steps:
+  - intent: ask_green_zones
+  - action: utter_green_zones
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thank_you
+  - action: utter_ask_more_questions
+
+- story: Doctor vocationalisation inquiry
+  steps:
+  - intent: ask_doctor_vocationalisation
+  - action: utter_doctor_vocationalisation
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_thank_you
+  - action: utter_ask_more_questions
+
+- story: User has more questions after affirmation
+  steps:
+    - intent: affirm
+    - action: utter_fire_away

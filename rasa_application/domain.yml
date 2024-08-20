@@ -1,0 +1,143 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - phone
+  - custom_actions
+  - provide_news_link
+  - provide_images_of_base
+  - ask_haze_effects
+  - ask_unit_phone_number
+  - provide_unit_phone_number
+  - ask_feedback_suggestions
+  - ask_medical_claims
+  - ask_aircraft_noise
+  - ask_firearms_ammunition_control
+  - ask_ns_home_awards
+  - ask_green_zones
+  - ask_doctor_vocationalisation
+entities:
+  - number
+
+slots:
+  unit_phone_number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: phone_number
+  inquiry_topic:
+    type: text
+    mappings:
+      - type: from_intent
+        intent: ask_haze_effects
+        value: haze_effects
+      - type: from_intent
+        intent: ask_feedback_suggestions
+        value: feedback_suggestions
+      - type: from_intent
+        intent: ask_medical_claims
+        value: medical_claims
+      - type: from_intent
+        intent: ask_aircraft_noise
+        value: aircraft_noise
+      - type: from_intent
+        intent: ask_unit_phone_number
+        value: unit_phone_number
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_testing:
+  - custom:
+      card: {
+      "title": 'testing 123',
+      "description" : 'This is the link you are looking for',
+      "image" : 'https://example.com/image.jpg'
+  }
+  utter_haze_effects:
+  - text: The health and safety of our servicemen are of paramount importance to the Singapore Armed Forces (SAF). We monitor air quality closely, and have in place a set of Pollutant Standards Index (PSI)-Activity Guidelines under the SAF Medical Directives and Training Safety Regulations to calibrate our outdoor activities and training according to the PSI reading. This ensures that SAF troops can train safely by modifying the nature and intensity of outdoor activities according to the haze level. The PSI-activity guidelines are formulated for the SAF population and take into account their medical fitness and the nature of training activities. These guidelines are also consistent with the National Environment Agency’s health advisories based on PSI readings. When the PSI is 100 or less, training will continue as per normal. When the PSI exceeds 100, the SAF will reduce physical and outdoor training accordingly.
+  utter_unit_phone_number:
+  - text: You can call the MINDEF operator at 6760 8828.
+  utter_feedback_suggestions:
+  - text: You can call the NS Call Centre at 1800-3676767  (if you are not calling from within Singapore, please use +65 65676767 instead). Alternatively, you may use our online Feedback form or send an email to contact@ns.sg.
+  utter_medical_claims:
+  - text: The PMC (Personnel Management Centre) will issue all serviceman with the SI (Service Injury) Card if their injuries have been approved as attributable to service by the Pensions / Awards Officer. The serviceman must produce this card to be eligible for fully-subsidised medical treatment at the government / restructured hospitals. If the SI Card is not produced when seeking treatment, the serviceman will have to pay for all the medical cost first and seek reimbursement via the respective PMCs with the following documents- a. the original medical bills and payment receipts b. a memorandum from the attending doctor to prove that the treatment received was for his service injury. The serviceman is required to notify his PMC immediately when he loses his SI Card. There will be an administrative charge of $15 for each replacement of lost or defaced SI Card. He will need to make the payment via MINDEF Cashier / Internet and submit the receipt to the unit PMC before he will be issued a new SI Card. While waiting for the SI Card to be issued or replaced, the serviceman may approach the respective PMCs for the issuance of the SI Memo (a temporary identification document) for the fully-subsidised medical treatment.
+  utter_aircraft_noise:
+  - text: The RSAF is mindful of the possible inconvenience to the public as a result of its flying activities over Singapore. The RSAF has laid down strict rules to reduce noise levels around the airbases, though the noise cannot be totally eliminated. Measures taken include:Lowering the speed of jets when operating over the main island, thus reducing noise emission. Ceasing flying activities during school listening comprehension examinations conducted at the national level. Conducting engine ground runs for the fighter aircraft in the Hush House, an enclosure designed to absorb noise during the testing of jet engines.
+  utter_firearms_ammunition_control:
+  - text: The SAF has very detailed procedures to control the issuance and use of arms and ammunition. Arms and ammunition are separately controlled and strictly accounted for on an individual basis. In all camps, firearms are kept in an armoury while ammunition is separately stored in ammunition dumps. In peace time, live ammunition is only issued for live firing, guard duties and specific operational needs. Live ammunition and firearms are also kept separate in these activities until the point of use. In all cases, the issue and return of firearms and ammunition are carried out formally and with clear procedures by designated persons, at designated locations. In the Guard Rooms, firearms are to be kept chained on a rack when not in use, while ammunition is to be placed in a secured storage container. Servicemen assigned Guard Duties are only issued firearms and ammunition just before the start of their shift. These items are to be returned promptly at the end of the duty personnel's shift to the Guard Commander, who has to account for the quantity, serial number and the condition of the arms and ammunition. For the control and management of ammunition during training and live firing exercises, a serviceman who is at least a Platoon Sergeant is tasked specifically to account for the issuance and return of ammunition. Each serviceman registers for the issue and return of his own ammunition. In ranges and live firing exercises, servicemen are only issued ammunition just prior to the commencement of their firing. Immediately after training activities, any remaining ammunition is recovered and counted and returned to the ammunition depot. Spent or empty cartridges are also recovered. Servicemen are also required to check if they have inadvertently failed to return any ammunition before they make a declaration that they do not have any live rounds or empty cartridges in their possession. They are then required to empty out their personal equipment for inspection by their commanders. Accounting for rounds must be completed before training is considered to have ended. In addition, in case any serviceman has evaded these checks and secreted any rounds after the firing exercises, commanders also conduct spot checks during barrack inspections and when servicemen leave camp. With such a system in place, the risk of theft, loss or unauthorised possession of any weapon or live round is very limited. Every serviceman knows that the unauthorised possession of any weapon or live round will result in disciplinary proceedings and very serious punishment
+  utter_ns_home_awards:
+  - text: The NS HOME Awards recognise Singaporean NSmen at each of their three significant milestones during their NS journey.The eligibility criteria are- Completion of full-time NS- Completion of 3 High-key (HK) In-Camp Trainings (ICTs) or Completion of 5 ORNS years of which 2 are HK, whichever is earlier.Mid-point of ORNS Training Cycle- Completion of ORNS training cycle or Completion of 10 ORNS years of which 7 are HK, whichever is earlier. Eligible NSmen will receive $5,000 at each milestone. Commanders (ranks of Third Sergeant and above for SAF NSmen and Sergeant and above for HomeTeam NSmen) will receive $500 more at each milestone. NS HOME 1- $3,000 into PSEA, $2,000 into CPF Medisave Account. NS HOME 2 and 3- $3,000 into CPF Ordinary Account, $2,000 into CPF Medisave Account.
+          A summary of the NS HOME Awards is as follows Total per milestone- $5,000. Total per NS HOME 1- $6,000. Total per NS HOME 2 and 3- $8,000. Commanders receive $500 more at each milestone and will receive a total of $16,500 if they meet all three milestones.
+  utter_green_zones:
+  - text: All camera-equipped mobile devices will now be allowed into designated Green Zones, but unauthorised photography and videography within all SAF camp premises remain prohibited in all zones. Here is a list of camps with green zones- • Amoy Quee Camp
+      • Bedok Camp
+      • Bukit Panjang Camp
+      • Clementi Camp
+      • Depot Road Camp
+      • Dieppe Barracks
+      • Jurong Camp I, II & III
+      • Kaki Bukit Camp
+      • Keat Hong Camp
+      • Khatib Camp
+      • Kranji Camp I, II & III
+      • Lim Chu Kang Camp
+      • Mandai Camp II
+      • Mandai Hill Camp
+      • Maju Camp
+      • Nee Soon Camp
+      • Pasir Ris Camp
+      • Pasir Laba Camp
+      • Pulau Tekong & SAF Ferry Terminal
+      • SAFTI MI
+      • Sembawang Camp
+      • Selarang Camp
+      • Seletar Camp
+      • Stagmont Camp
+      • Sungei Gedong Camp
+      • Tanjong Gul Camp
+
+  utter_doctor_vocationalisation:
+  - text: The need to utilise doctors in their professional role has always been recognised by the SAF. National Servicemen with recognised medical qualifications to practise in the SAF will have to be trained to operate in the military environment before being commissioned as Medical Officers. Most doctors are able to do so, even those with medical problems so severe that they are unable to complete the medical officers' course, are utilised as para-medical personnel where their medical knowledge is still put to good use. Only in an extreme case such as that of a person who fails the course because of his poor attitude to military training or disciplinary problems, would he be used as a medical orderly. This is because his attitude may affect his behaviour and practice towards soldiers. To ensure that good quality healthcare is given to SAF servicemen, it is necessary to have sufficient doctors in SAF Medical Centres so that adequate time can be given to each patient. Doctors from the Ministry of Health have been seconded, including women doctors, to assist the SAF when the numbers in the SAF have temporarily been low. The women doctors have been particularly welcomed by servicewomen in the SAF.
+  utter_thank_you:
+  - text: Thank you!
+
+  utter_ask_more_questions:
+  - text: Did you have any other questions you'd like to ask?
+
+  utter_fire_away:
+  - text: Sure, fire away!
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_out_of_scope
+  - providing_news_link
+  - providing_images_of_base
+  - utter_feedback_suggestions
+  - action_provide_unit_phone_number

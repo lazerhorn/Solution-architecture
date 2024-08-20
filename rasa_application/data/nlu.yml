@@ -1,0 +1,176 @@
+version: "3.1"
+
+nlu:
+- intent: phone
+  examples: |
+    - [3562462432](number)
+    - This is my phone number [1634564756](number)
+    - Here you go [345654345](number)
+- intent: out_of_scope
+  examples: |
+    - This is a joke 
+    - Hello
+    - What date is today?
+    - give me the link to the google website
+    - google website
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: custom_actions
+  examples: |
+    - give me some custom actions
+    - custom actions
+    - custom
+
+- intent: provide_news_link
+  examples: |
+    - provide me with the news
+    - link me to the news
+    - news link
+
+- intent: provide_images_of_base
+  examples: |
+    - provide me with pictures of
+    - where is the base
+    - where is CMPB
+    - base location?
+
+- intent: ask_haze_effects
+  examples: |
+    - How are SAF training and physical activities affected by the Haze?
+    - What impact does the Haze have on SAF training and physical exercises?
+    - Does the Haze change how soldiers train outside?
+- intent: ask_unit_phone_number
+  examples: |
+    - How do I find out the phone number of my unit?
+    - Where can I get my unit's phone number?
+    - What's the procedure for obtaining my unit's contact information?
+- intent: ask_feedback_suggestions
+  examples: |
+    - How do I give feedback or suggestions to MINDEF/SAF?
+    - Where do I share thoughts or tips with the defense folks?
+    - If I have a good idea for the military, where do I send it?
+- intent: ask_medical_claims
+  examples: |
+    - How do I make medical claims for service injury?
+    - What do I do to get money back for medical bills from work injuries?
+    - If I get hurt during service, how do I pay for the doctor?
+- intent: ask_aircraft_noise
+  examples: |
+    - Is the RSAF doing anything about aircraft noise over certain parts of Singapore?
+    - Are they trying to make airplanes quieter over my neighborhood?
+    - Does the Air Force care about loud planes flying over our area?
+- intent: ask_firearms_ammunition_control
+  examples: |
+    - What measures does the SAF have in place to control the issuance and use of firearms and ammunition?
+    - How do they make sure guns and bullets don't get into the wrong hands?
+    - How come bad people don't get military guns?
+- intent: ask_ns_home_awards
+  examples: |
+    - When do I get my NS HOME (National Service Housing, Medical and Education) Awards?
+    - When do i get my Home ns award?
+    - When do I get money or help for serving in the military?
+    - Do I get any extra stuff after finishing my time in the military?
+    - Will I get any extra stuff after finishing my time in the military?
+    - Can I get any extra stuff after finishing my time in the military?
+- intent: ask_green_zones
+  examples: |
+    - Which SAF Camps have Green Zones that allow for carriage of Camera-Equipped Mobile Devices?
+    - Which camps can i bring phone in?
+    - What camp allow me to use phone?
+- intent: ask_doctor_vocationalisation
+  examples: |
+    - Why has the SAF allowed some doctors to be vocationalised as medics in the SAF while serving their NS?
+    - Why do some doctors work as medics in the army?
+    - How come doctors sometimes help out with medical stuff in the military?
+- intent: provide_unit_phone_number
+  examples: |
+    - My unit's phone number is [1800-3676767](phone_number)
+    - Call me at (555) 123-4567
+    - Here's the number: +1 234-567-8901

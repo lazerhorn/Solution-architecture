@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <!-- CSS styling for the draggable and resizable div -->
+        <title>Document</title>
+    </head>
+    <body>
+
+        <div class="main-body">
+<!--            <img src="../static/images/websiteBackground.png">-->
+            <div class="menuToggle active">
+                <img src="../static/images/admin_big.png">
+            </div>
+            <div id= "draggableResizable" class="container ui-widget-content" >
+                <div class="top-part">
+                    <div class="agent-details">
+                        <i></i>
+                        <img src="../static/images/admin.png" alt="" class="profile-picture-top">
+                        <div class="agent-text">
+                            <h1>Ask RSAF</h1>
+                            <p>Agent <span style="color: #87fc87">(Online)</span></p>
+                        </div>
+                    </div>
+                    <img src="../static/images/cross-image.png" alt="" class="cross">
+
+                </div>
+                <div class="rating-box">
+                            <i class="minimize" title="Close">_</i>
+                            <p> How would you like to rate the support you receive?</p>
+                            <div>
+                                <i class='bx bx-star' ></i>
+                                <i class='bx bx-star' ></i>
+                                <i class='bx bx-star' ></i>
+                                <i class='bx bx-star' ></i>
+                                <i class='bx bx-star' ></i>
+
+                            </div>
+
+                        <textarea placeholder="Would you like to share any other comments?"></textarea>
+                        <button>Submit</button>
+                    </div>
+
+                    <div class="message-part">
+
+
+<!--                        <div class="message bot">-->
+<!--                            <img src="../static/images/hihi.jpeg" alt="">-->
+<!--                            <p>Here is the news link you requested: <br><a target="_blank" href="https://www.mindef.gov.sg/web/portal/rsaf/news-and-publications/news">"https://www.mindef.gov.sg/web/portal/rsaf/news-and-publications/news"</a>-->
+<!--                                <img src="../static/images/base_image.png" class="outImage">-->
+<!--                                <br>"This link provides information about the latest and past news about The Republic of Singapore Air Force."</p>-->
+<!--                            <span>8:31PM</span>-->
+<!--                        </div>-->
+<!--                        <div class="message user">-->
+<!--                            <p>ok dwag</p>-->
+<!--                            <span>8:31PM</span>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="sending-part">
+                        <div class="text-area">
+                            <textarea  name='' id="texting" cols="30" rows="10" placeholder="Type your message here" required></textarea>
+                        </div>
+                        <div class="sending">
+                            <img src="../static/images/sending.png" alt="">
+                        </div>
+                    </div>
+                    <div class="last-thing">
+                        <div class="rating"><img src="../static/images/emoji.png" alt="Rate Chat"></div>
+                        <div class="download"><img src="../static/images/download.png" alt="Download Transcript"></div>
+                        <div class="power"><p>POWERED BY DAVE</p></div>
+                    </div>
+                <div class="rate-behind"></div>
+            </div>
+
+        </div>
+        <img src="../static/images/websiteBackground.png" alt="">
+
+    </body>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+<!--    <script>-->
+<!--        $(function() {-->
+<!--          $("#draggableResizable").draggable();-->
+<!--          $("#draggableResizable").resizable();-->
+<!--        });-->
+<!--        // const menuToggle = document.querySelector(".menuToggle");-->
+<!--        // menuToggle.onclick = function(){-->
+<!--        //     menuToggle.classList.toggle('active')-->
+<!--        // }-->
+<!--    </script>-->
+</html>
