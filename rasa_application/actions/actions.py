@@ -34,7 +34,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import os
 
-openai_api_key = "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"
+openai_api_key = ''
 print(openai_api_key)
 def gptResponse(query):
     client = OpenAI(
